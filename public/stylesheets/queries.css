@@ -1,0 +1,129 @@
+/* Reset and base */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+body { background: #fafafa; color: #333; }
+
+/* Header - same gradient as other pages */
+.header {
+  background: linear-gradient(to right, #6a1b9a, #1e88e5);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+}
+.header .logo { font-weight: bold; font-size: 18px; }
+.header .logout { cursor: pointer; }
+
+/* Layout container */
+.container {
+  display: flex;
+  height: calc(100vh - 50px);
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #f2f2f2;
+  border-right: 1px solid #ddd;
+}
+.sidebar ul { list-style: none; }
+.sidebar ul li {
+  padding: 15px 20px;
+  cursor: pointer;
+}
+.sidebar ul li:hover { background: #e0e0e0; }
+.sidebar ul li.active { background: #8e24aa; color: #fff; }
+
+/* Main content */
+.content {
+  flex: 1;
+  padding: 40px;
+}
+.content h2 { text-align: center; margin-bottom: 24px; }
+
+/* Queries wrap */
+.queries-wrap { max-width: 900px; margin: 0 auto; }
+
+/* Header inside queries */
+.queries-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.queries-header h3 {
+  font-size: 18px;
+  color: #444;
+}
+.search {
+  padding: 8px 10px;
+  width: 220px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Messages list */
+.messages-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Message card */
+.msg-card {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  padding: 16px;
+  border-radius: 6px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03);
+}
+.msg-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.sender { font-weight: 600; color: #333; }
+.date { font-size: 13px; color: #888; }
+.msg-body {
+  color: #444;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+/* footer of message */
+.msg-footer {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  align-items: center;
+}
+.status {
+  background: #f0f6ff;
+  color: #2b6cb0;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  border: 1px solid #d6eaff;
+}
+.status.read {
+  background: #f3f3f3;
+  color: #666;
+  border: 1px solid #e0e0e0;
+}
+.btn-small {
+  background: #8e24aa;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.btn-small:hover { background: #6a1b9a; }
+
+/* Make layout similar spacing as original screenshot */
+@media (max-width: 900px) {
+  .queries-wrap { padding: 0 20px; }
+  .search { width: 160px; }
+}

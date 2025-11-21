@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MediCARE+</title>
+  <link rel="stylesheet" href="./stylesheets/Dashboard.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-icon">🏥</span>
+      <span class="brand-text">MediCARE+</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li class="active">Dashboard</li>
+          <li>Book Appointment</li>
+          <li>Appointment History</li>
+        </ul>
+      </nav>
+    </aside>
+
+    <section class="content">
+      <h1 class="welcome">Welcome <%= fname %><span class="name"></span></h1>
+
+      <div class="cards">
+        <div class="card">
+          <div class="icon-box">
+            <!-- simple icon -->
+            <svg viewBox="0 0 24 24" class="icon-svg" aria-hidden="true">
+              <rect rx="6" ry="6" width="24" height="24" />
+              <path d="M8 12l3-2 3 2" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Book My Appointment</h3>
+          <a class="link-small" href="/book">Book Appointment</a>
+        </div>
+
+        <div class="card">
+          <div class="icon-box">
+            <svg viewBox="0 0 24 24" class="icon-svg" aria-hidden="true">
+              <rect rx="6" ry="6" width="24" height="24" />
+              <path d="M8 12h8" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M11 8v8" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>My Appointments</h3>
+          <a class="link-small" href="/history">View Appointment History</a>
+        </div>
+      </div>
+
+      
+    </section>
+  </main>
+</body>
+</html>

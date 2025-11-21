@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediCARE+</title>
+  <link rel="stylesheet" href="./stylesheets/appointment.css">
+</head>
+<body>
+  <div class="header">
+    <h1><div class="hospital-name">🏥 MediCARE+</div></h1>
+    <div class="logout">Logout</div>
+  </div>
+
+  <div class="container">
+    <div class="sidebar">
+      <ul>
+        <li>Dashboard</li>
+        <li class="active">Book Appointment</li>
+        <li>Appointment History</li>
+      </ul>
+    </div>
+
+    <div class="main">
+      <h2>Welcome </h2>
+      <h3>Create an appointment</h3>
+
+      <form method="post" action="/book">
+
+        <label for="doctor">Doctors:</label>
+       <select name="docname" id="doctor">
+        <option value="Dr. Praveen Kumar">Dr. Praveen Kumar</option>
+        <option value="Dr. Gaurav Mittal">Dr. Gaurav Mittal</option>
+        <option value="Dr. Ram Avtar Sharma">Dr. Ram Avtar Sharma</option>
+        <option value="Dr. Parag ">Dr. Parag </option>
+        <option value="Dr. D.K. Kansal">Dr. D.K. Kansal</option>
+        <option value="Dr. K. Mohd">Dr. K. Mohd</option>
+       </select>
+
+        <label for="patient">Patient Name:</label>
+        <input type="text" id="patient" value=""  name="patient_name">
+
+        <label for="fees">Min Consultancy Fees:</label>
+        <input type="text" id="fees" value="500"  name="fees"> 
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" value="" name="date">
+
+        <label for="time">Time:</label>
+        <input type="time" id="time" value="" name="time">
+
+        <input type="submit" value="Book Appointment" name="smbtn">
+      </form>
+    </div> <input type="text">
+  </div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+/* Reset */
+* { margin:0; padding:0; box-sizing:border-box; }
+body,html { height:100%; font-family:"Segoe UI", Arial, sans-serif; background:#f6f6f6; color:#222; }
+
+/* Top bar */
+.topbar {
+  background: linear-gradient(90deg,#4b6cb7,#3b82c3);
+  color:#fff;
+  padding:14px 22px;
+  box-shadow:0 2px 0 rgba(0,0,0,0.06);
+}
+.brand { display:flex; align-items:center; gap:10px; font-weight:600; }
+.brand-icon { font-size:18px; background:rgba(255,255,255,0.12); padding:6px; border-radius:6px; }
+.brand-text { font-size:15px; }
+
+/* Main layout */
+.container {
+  display:grid;
+  grid-template-columns:220px 1fr;
+  min-height:calc(100vh - 56px);
+  background:#fff;
+}
+
+/* Sidebar */
+.sidebar {
+  border-right:1px solid rgba(0,0,0,0.06);
+  padding:28px 18px;
+  background:#fafafa;
+}
+.sidebar nav ul { list-style:none; }
+.sidebar nav li {
+  padding:12px 16px;
+  margin-bottom:12px;
+  border-radius:6px;
+  color:#6b6b6b;
+  font-weight:500;
+  cursor:pointer;
+}
+.sidebar nav li.active {
+  background:linear-gradient(90deg,#8b7de6,#7b66d6);
+  color:#fff;
+  box-shadow:0 2px 6px rgba(123,102,214,0.12);
+}
+
+/* Content */
+.content {
+  padding:36px 48px;
+  position:relative;
+}
+.welcome {
+  font-size:26px;
+  font-weight:600;
+  margin-bottom:32px;
+}
+.welcome .name { font-weight:700; margin-left:8px; }
+
+/* Table */
+.table-container {
+  overflow-x:auto;
+}
+table {
+  width:100%;
+  border-collapse:collapse;
+  background:#fff;
+  box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  border-radius:6px;
+  overflow:hidden;
+}
+thead {
+  background:#f2f2f2;
+}
+th,td {
+  text-align:left;
+  padding:14px 18px;
+  font-size:15px;
+  border-bottom:1px solid #eaeaea;
+}
+th { font-weight:600; color:#444; }
+tbody tr:last-child td { border-bottom:none; }
+
+/* Fig */
+.fig {
+  margin-top:28px;
+  font-size:24px;
+  font-weight:700;
+  text-align:center;
+  color:#222;
+}
+
+/* Responsive */
+@media(max-width:880px){
+  .container { grid-template-columns:1fr; }
+  .sidebar { order:2; display:flex; justify-content:center; }
+  .content { order:1; padding:22px; }
+  table { font-size:14px; }
+}

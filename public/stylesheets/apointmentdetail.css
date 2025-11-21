@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+    --primary-color: #5d4297;
+    --secondary-color: #6a49a9;
+    --background-color: #e6e6fa;
+    --text-color: #333;
+    --light-text-color: #ddd;
+    --border-color: #ccc;
+    --active-bg: #8c5cdb;
+    --table-header-bg: #f2f2f2;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.page-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- Sidebar Styling --- */
+.sidebar {
+    width: 250px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 10px 0 30px;
+}
+
+.nav-menu ul {
+    list-style: none;
+}
+
+.nav-menu ul li {
+    margin-bottom: 10px;
+}
+
+.nav-menu ul li a {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    color: var(--light-text-color);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-menu ul li a:hover {
+    background-color: var(--secondary-color);
+}
+
+.nav-menu ul li.active a {
+    background-color: var(--active-bg);
+    color: white;
+    font-weight: 600;
+}
+
+.nav-menu .icon {
+    margin-right: 15px;
+    width: 20px; /* To align icons */
+    text-align: center;
+}
+
+/* --- Main Content Styling --- */
+.main-content {
+    flex-grow: 1;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.content-header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.search-bar-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.search-input {
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    width: 250px;
+}
+
+.search-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* --- Table Styling --- */
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+thead th {
+    background-color: var(--table-header-bg);
+    color: var(--text-color);
+    font-weight: 600;
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 2px solid var(--border-color);
+}
+
+tbody td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+tbody tr:hover {
+    background-color: #f9f9f9;
+}

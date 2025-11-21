@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Global Hospital - Doctor Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./stylesheets/doctordashboard.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+       <h1><span class="brand-icon">👩‍⚕</span>
+        <span class="brand-text">MediCARE+</span></h1>
+      </div>
+
+      <div class="search">
+        <input type="text" placeholder="Enter contact number" />
+        <button type="button">Search</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <aside class="sidebar">
+      <ul class="menu">
+        <li class="menu-item active">Dashboard</li>
+        <li class="menu-item">Appointments</li>
+      </ul>
+    </aside>
+
+    <section class="content">
+      <h1 class="welcome">Welcome&nbsp;&nbsp; <%= email %></h1>
+
+      <div class="center-card">
+        <div class="icon-wrap" aria-hidden="true">
+          <!-- list icon (simple SVG) -->
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="5" width="16" height="14" rx="3" fill="#7B2CBF"/>
+            <path d="M8 9h8M8 12h8M8 15h8" stroke="#FFF" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <h2 class="cta-title">View Appointments</h2>
+        <a class="cta-sub" href="/docmeet/<%= email %>">Appointment List</a>
+      </div>
+
+      
+
+      <p class="explanatory">
+        In this page, doctor can able to see their appointments which has been booked by the patients.
+      </p>
+    </section>
+  </main>
+</body>
+</html>

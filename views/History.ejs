@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MediCARE+</title>
+  <link rel="stylesheet" href="./stylesheets/History.css" />
+</head>
+<body>
+  <!-- Top Bar -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-icon">🏥</span>
+      <span class="brand-text">MediCARE+</span>
+    </div>
+  </header>
+
+  <!-- Main Layout -->
+  <main class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li>Dashboard</li>
+          <li>Book Appointment</li>
+          <li class="active">Appointment History</li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Content -->
+    <section class="content">
+      <h1 class="welcome">Welcome <span class="name"></span></h1>
+
+      <!-- Table -->
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Doctor Name</th>
+              <th>Patient Name</th>
+              <th>Consultancy Fees</th>
+              <th>Appointment Date</th>
+              <th>Appointment Time</th>
+            </tr>
+          </thead>
+          <tbody>
+
+           <% if(allappointments != false) { %>
+          <%  allappointments.forEach((m) =>{ %>
+
+              <tr> 
+              <td><%= m.doctor_name %></td>
+              <td><%= m.patient_name %></td>
+              <td><%= m.fee %></td>
+              <td><%= m.date %></td>
+              <td><%= m.time %></td>
+            </tr>
+
+             <%  }) %> 
+
+           <%  } else{  %>
+            <h1>NO Appointment Yet YET</h1>
+         <%  } %>
+
+         
+            
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

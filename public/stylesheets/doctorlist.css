@@ -1,0 +1,145 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #5d3fd3; /* Dark purple */
+    color: white;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.logo i {
+    margin-right: 10px;
+}
+
+.sidebar-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.sidebar-menu li {
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sidebar-menu li:hover {
+    background-color: #7a5cd9;
+}
+
+.sidebar-menu li.active {
+    background-color: #7a5cd9; /* Lighter purple for active item */
+}
+
+.sidebar-menu a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar-menu i {
+    margin-right: 10px;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 30px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h2 {
+    color: #5d3fd3;
+    font-size: 32px;
+}
+
+.content-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.content-header input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.search-button {
+    background-color: #5d3fd3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: #7a5cd9;
+}
+
+.table-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #f2f2f2;
+}
+
+th, td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    color: #555;
+    font-weight: bold;
+}
+
+tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Optional: Add a subtle text shadow for better readability on links in sidebar */
+.sidebar-menu a {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}

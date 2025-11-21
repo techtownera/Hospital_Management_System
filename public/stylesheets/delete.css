@@ -1,0 +1,101 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(to right, #6a1b9a, #1e88e5);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+}
+
+.header .logo {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.header .logout {
+  cursor: pointer;
+}
+
+/* Container */
+.container {
+  display: flex;
+  height: calc(100vh - 50px);
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #f2f2f2;
+  border-right: 1px solid #ddd;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  padding: 15px 20px;
+  cursor: pointer;
+}
+
+.sidebar ul li:hover {
+  background: #e0e0e0;
+}
+
+.sidebar ul li.active {
+  background: #8e24aa;
+  color: white;
+}
+
+/* Form Section */
+.form-section {
+  flex: 1;
+  padding: 40px;
+}
+
+.form-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+input {
+  padding: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.btn {
+  background: #8e24aa;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.btn:hover {
+  background: #6a1b9a;
+}

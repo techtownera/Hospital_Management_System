@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCARE+</title>
+    <link rel="stylesheet" href="./stylesheets/index.css">
+</head>
+
+<body>
+
+  <div class="navbar">
+    <h1>MediCARE+</h1>
+    <div class="nav-links">
+    <a href="/">HOME</a>
+    <a href="/about">ABOUT US</a>
+    <a href="/contact">CONTACT</a>
+  </div>
+  </div>
+
+  <!-- Form Box -->
+  <div class="container">
+    <div class="box">
+      <div class="left">
+        
+        <img src="./images/doctor.jpg" width="250px" >
+               </div>
+      <div class="right">
+        
+
+        <h2>Register YourSelf in Medicare+</h2>
+
+        <form method="post" action="/register">
+        <div class="tabs">
+        Patient <input type="radio" name="role" id="role" class="effect" value="Patient">
+        Doctor <input type="radio" name="role"  id="role" class="effect" value="Doctor">
+        Admin <input type="radio" name="role"   id="role" class="effect" value="Admin">
+        </div>
+          <div class="form-group">
+            <input type="text" placeholder="First Name *" name="fname" required>
+            <input type="text" placeholder="Last Name *" name="lname" required>
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Your Email *" name="email" required >
+            <input type="tel" placeholder="Your Phone *" name="phone" required>
+          </div>
+          <div class="form-group">
+            <input type="password" placeholder="Password *" name="password" required>
+            <input type="password" placeholder="Confirm Password *" required>
+          </div>
+
+          <div class="radio">
+            <input type="radio" name="gender" value="male"> Male
+            <input type="radio" name="gender" value="female"> Female
+            <input type="radio" name="gender" value="other">other
+          </div>
+
+          <input type="submit" value="Register" name="smbtn" class="btn">
+          <div class="already">Already have an account?</div>
+        </form>
+        <button class="btn"><a href="/login">Log in </a> </button>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="./javascripts/index.js"></script>
+</body>
+</html> 
+    

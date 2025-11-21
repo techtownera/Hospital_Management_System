@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f0f2f5; /* A light background for the page */
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 1100px;
+    height: 650px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Left Sidebar Styling */
+.sidebar {
+    width: 35%;
+    background: #6a11cb;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.6em;
+    font-weight: 600;
+    align-self: flex-start;
+}
+
+.logo i {
+    margin-right: 10px;
+}
+
+.sidebar-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.ambulance-icon {
+    font-size: 6em;
+    margin-bottom: 20px;
+}
+
+.sidebar-content p {
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+/* Main Content Area Styling */
+.main-content {
+    width: 65%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.navbar {
+    width: 100%;
+    text-align: right;
+    margin-bottom: 50px;
+}
+
+.navbar a {
+    color: purple;
+    text-decoration: none;
+    margin-left: 35px;
+    font-weight: 500;
+    font-size: 1em;
+}
+
+/* Login Card Styling */
+.login-card {
+    background-color: #ffffff;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    color: #333;
+}
+
+.card-header {
+    font-size: 3.5em;
+    color: #6a5acd;
+    margin-bottom: 15px;
+}
+
+.login-card h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: #f7f7f7; /* Light grey background for input */
+}
+
+.login-button {
+    background-color: #6a5acd;
+    color: #fff;
+    padding: 12px 25px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #5849a9;
+}

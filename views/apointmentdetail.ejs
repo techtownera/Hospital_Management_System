@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment List</title>
+    <link rel="stylesheet" href="./stylesheets/apointmentdetail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="page-container">
+        
+        <aside class="sidebar">
+            <div class="logo">MediCare+</div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#"><i class="fas fa-th-large icon"></i>Dashboard</a></li>
+                    <li><a href="#"><i class="fas fa-user-md icon"></i>Doctor List</a></li>
+                    <li><a href="#"><i class="fas fa-user-injured icon"></i>Patient List</a></li>
+                    <li class="active"><a href="#"><i class="fas fa-calendar-check icon"></i>Appointment Details</a></li>
+                    <li><a href="#"><i class="fas fa-user-plus icon"></i>Add Doctor</a></li>
+                    <li><a href="#"><i class="fas fa-envelope icon"></i>Messages</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="content-header">
+                <h1>WELCOME ADMIN</h1>
+            </header>
+
+            <div class="search-bar-container">
+                <input type="text" placeholder="Enter Contact" class="search-input">
+                <button class="search-button">Search</button>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                    
+                            <th>Doctor Name</th>
+                            <th>Patient Name</th>
+                            <th>Consultancy Fees</th>
+                            <th>Appointment Date</th>
+                            <th>Appointment Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <% if(allappoint != false){ %>
+                       <% allappoint.forEach((p) =>{ %>
+
+                        <tr>
+                            <td><%= p.doctor_name %></td>
+                            <td><%= p.patient_name %></td>
+                            <td><%= p.fee %></td>
+                            <td><%= p.date %></td>
+                            <td><%= p.time %></td>
+                        </tr>
+
+
+                       <% }) %>
+                    <% } else { %>
+                        <h1>No Doctors Yet</h1>
+                  <%  } %>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

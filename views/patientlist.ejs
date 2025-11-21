@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="./stylesheets/patientlist.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">MediCare+</div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Doctor List</a></li>
+                    <li><a href="#"class ="active">Patient List</a></li>
+                    <li><a href="#">Appointment Details</a></li>
+                    <li><a href="#">Add Doctor</a></li>
+                    <li><a href="#">Messages</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <h1>WELCOME ADMIN</h1>
+                <div class="search-box">
+                    <input type="text" placeholder="Enter Contact">
+                    <button>Search</button>
+                </div>
+            </header>
+
+            <section class="patient-list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Contact</th>
+                            <th>Gender</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <% if(allpatients != false){ %>
+                       <% allpatients.forEach((p) =>{ %>
+
+                        <% if(p.role === "Patient"){ %>
+
+                        <tr>
+                            <td><%= p.First_Name %></td>
+                            <td><%= p.Last_Name %></td>
+                            <td><%= p.email %></td>
+                            <td><%= p.phone %></td>
+                            <td><%= p.gender %></td>
+                        </tr>
+
+                         <%   } %>
+
+                       <% }) %>
+                    <% } else { %>
+                        <h1>No Patients Yet</h1>
+                  <%  } %>
+                        
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

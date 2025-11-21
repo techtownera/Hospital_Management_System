@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediCARE+</title>
+  <link rel="stylesheet" href="./stylesheets/contact.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <div class="logo">
+      <i class="fas fa-user-friends"></i><h1> MediCARE+</h1>
+    </div>
+    <nav>
+      <a href="/">HOME</a>
+      <a href="/about">ABOUT US</a>
+      <a href="/contact">CONTACT</a>
+    </nav>
+  </header>
+
+  <!-- Contact Box -->
+  <section class="contact-section">
+    <div class="contact-box">
+      <div class="icon">
+        <i class="fas fa-rocket"></i>
+      </div>
+      <h2>Drop Us a Message</h2>
+      <form method="post" action="feedback">
+        <input type="text" placeholder="Name" name="name"  value="" required>
+        <input type="email" placeholder="Email" name="email" value="" required>
+        <input type="text" placeholder="Phone" name="phone" value="" required> 
+        <textarea placeholder="Please Submit Your Feedback" name="feedback" value="" ></textarea>
+        <input type="submit" value="Send Message" name="submitbtn" >
+      </form>
+    </div>
+  </section>
+</body>
+</html>

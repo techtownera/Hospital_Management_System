@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediCARE+</title>
+  <link rel="stylesheet" href="./stylesheets/delete.css">
+</head>
+<body>
+  <!-- Top Header -->
+  <div class="header">
+    <div class="logo">🌐 MediCARE+</div>
+    <div class="logout">Logout</div>
+  </div>
+
+  <!-- Main Container -->
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <ul>
+        <li>Dashboard</li>
+        <li>Doctor List</li>
+        <li>Patient List</li>
+        <li>Appointment Details</li>
+        <li>Add Doctor</li>
+        <li class="active">Delete Doctor</li>
+        <li>Queries</li>
+      </ul>
+    </div>
+
+    <!-- Form Section -->
+    <div class="form-section">
+      <h2>WELCOME ADMIN</h2>
+      <form method="post" action="/deletedoc">
+        <label>Email ID:</label>
+        <input type="email" placeholder="Enter doctor's email" name="email" value="">
+        <input type="submit" name="submitbtn"  id="submitbtn" value="Delete Doctor">
+      </form>
+    </div>
+  </div>
+</body>
+</html>

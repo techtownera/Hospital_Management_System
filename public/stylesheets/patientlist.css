@@ -1,0 +1,136 @@
+/* Basic page setup */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+/* Main container using Flexbox to create the sidebar and content layout */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 250px;
+    background-color: #fff;
+    padding: 20px 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4b0082;
+    padding: 0 20px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu li a {
+    display: block;
+    padding: 15px 20px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-menu li a:hover {
+    background-color: #f0f2f5;
+    color: #4b0082;
+}
+
+.nav-menu li a.active {
+    background-color: #4b0082;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Main content area */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #f0f2f5;
+}
+
+/* Header section */
+.header {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 24px;
+    margin: 0;
+    color: #4b0082;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+}
+
+.search-box input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+}
+
+.search-box button {
+    padding: 10px 15px;
+    background-color: #4b0082;
+    color: #fff;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-box button:hover {
+    background-color: #3a0066;
+}
+
+/* Patient List table styling */
+.patient-list {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.patient-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.patient-list th,
+.patient-list td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+.patient-list th {
+    background-color: #f8f8f8;
+    color: #555;
+    font-weight: bold;
+}
+
+.patient-list tr:hover {
+    background-color: #f9f9f9;
+}

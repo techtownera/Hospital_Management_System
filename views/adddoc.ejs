@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediCARE+</title>
+  <link rel="stylesheet" href="./stylesheets/adddoc.css">
+</head>
+<body>
+  <!-- Top Header -->
+  <div class="header">
+    <div class="logo">MediCARE+</div>
+    <div class="logout">Logout</div>
+  </div>
+
+  <!-- Main Container -->
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <ul>
+        <li>Dashboard</li>
+        <li>Doctor List</li>
+        <li>Patient List</li>
+        <li>Appointment Details</li>
+        <li class="active">Add Doctor</li>
+        <li><a href="/deletedoc">Delete Doctor</a></li>
+        <li>Messages</li>
+      </ul>
+    </div>
+
+    <!-- Form Section -->
+    <div class="form-section">
+      <h2>WELCOME ADMIN</h2>
+      <form method="post" action="/adddoc">
+        <label>First Name:</label>
+        <input type="text" name="fname" value="">
+
+        <label>Last Name:</label>
+        <input type="text" name="lname" value="">
+
+         <label>Email ID:</label>
+        <input type="email" name="email" value="">
+
+        <label>Phone no:</label>
+        <input type="number" name="phone" value="">
+
+        <label>Password:</label>
+        <input type="password" name="password" value="">
+
+        <label>Confirm Password:</label>
+        <input type="password" name="password" value="">
+        
+        <div class="radio">
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female
+        <input type="radio" name="gender" value="other">other
+  </div>
+        <input type="submit" name="submitbtn" value="Add Doctor">
+
+      </form>
+    </div>
+  </div>
+</body>
+</html>

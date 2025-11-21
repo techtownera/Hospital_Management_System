@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Global Hospital - Queries</title>
+  <link rel="stylesheet" href="./stylesheets/queries.css" />
+</head>
+<body>
+  <!-- Top Header -->
+  <div class="header">
+    <div class="logo">🌐 MediCARE+</div>
+    <div class="logout">Logout</div>
+  </div>
+
+  <!-- Main Container -->
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <ul>
+        <li>Dashboard</li>
+        <li>Doctor List</li>
+        <li>Patient List</li>
+        <li>Appointment Details</li>
+        <li>Add Doctor</li>
+        <li>Delete Doctor</li>
+        <li class="active">queries</li>
+      </ul>
+    </aside>
+
+    <!-- Queries Section -->
+    <main class="content">
+      <h2>WELCOME ADMIN</h2>
+
+      <section class="queries-wrap">
+        <div class="queries-header">
+          <h3>Feedback Messages</h3>
+          <input class="search" type="text" placeholder="Search feedback..." />
+        </div>
+
+        <div class="messages-list">
+
+        <%   if(query != false){ %>
+
+        <%  query.forEach((q) =>{ %>
+ 
+          <!-- message card 1 -->
+          <article class="msg-card">
+            <div class="msg-top">
+              <span class="sender"><%= q.name %></span>
+              <span class="date"><%= q.email %></span>
+              <span class="date"><%= q.phone %></span>
+            </div>
+            <p class="msg-body">
+              <%= q.feedback %>
+            </p>
+            <div class="msg-footer">
+              <span class="status">New</span>
+              <button class="btn-small">Mark Read</button>
+            </div>
+          </article>
+
+        <%  }) %>
+
+         <%  }else{ %>
+              <h1>No Queries Yet</h1>
+           <% } %>
+         
+
+
+          <!-- add more sample cards as needed -->
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

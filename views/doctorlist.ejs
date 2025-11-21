@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare+ - Admin Dashboard</title>
+    <link rel="stylesheet" href="./stylesheets/doctorlist.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <div class="logo">
+                <i class="fas fa-hospital"></i>MediCARE+
+            </div>
+            <nav class="sidebar-menu">
+                <ul>
+                    <li><a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li class="active"><a href="#"><i class="fas fa-user-md"></i> Doctor List</a></li>
+                    <li><a href="#"><i class="fas fa-user-injured"></i> Patient List</a></li>
+                    <li><a href="#"><i class="fas fa-calendar-alt"></i> Appointment Details</a></li>
+                    <li><a href="#"><i class="fas fa-user-plus"></i> Add Doctor</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> Messages</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="main-content">
+            <div class="header">
+                <h2>WELCOME ADMIN</h2>
+            </div>
+            
+            <div class="content-header">
+                <input type="text" placeholder="Enter Email ID">
+                <button class="search-button">Search</button>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                       <% if(alldocs != false){ %>
+                       <% alldocs.forEach((d) =>{ %>
+
+                        <% if(d.role === "Doctor"){ %>
+
+                        <tr>
+                            <td><%= d.First_Name %></td>
+                            <td><%= d.Last_Name %></td>
+                            <td><%= d.email %></td>
+                            <td><%= d.phone %></td>
+                        </tr>
+
+                         <%   } %>
+
+                       <% }) %>
+                    <% } else { %>
+                        <h1>No Doctors Yet</h1>
+                  <%  } %>
+                      
+                       </tbody>
+                        </table>
+
+                     
+                            
+                        </body>
+                        </html>

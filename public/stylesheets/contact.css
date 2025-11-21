@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  height: 100vh;
+}
+
+/* Navbar */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  color: white;
+}
+
+header .logo {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+header nav a {
+  margin-left: 25px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* Contact Box */
+.contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 60px);
+}
+
+.contact-box {
+  background: white;
+  padding: 30px;
+  border-radius: 50px;
+  width: 600px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+}
+
+.contact-box .icon {
+  background: #6a11cb;
+  color: white;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.contact-box h2 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form input, form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  font-size: 14px;
+}
+
+form textarea {
+  resize: none;
+  height: 80px;
+}
+
+form button {
+  background: #6a11cb;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+form button:hover {
+  background: #2575fc;
+}
