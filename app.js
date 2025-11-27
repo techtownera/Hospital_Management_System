@@ -15,12 +15,36 @@ const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 const patient = require('./models/patient');
 require('dotenv').config();
+const session = require('express-session');
+const MongoDBStore = require('connect-mongodb-session')(session);
+
+// This needs to be your Production DB URI (from Vercel Environment Variables)
+const MONGODB_URI = process.env.DATABASE_URL; 
+
+const store = new MongoDBStore({
+  uri: MONGODB_URI,
+  collection: 'sessions', // Name of the collection to store sessions
+});
+
+app.use(session({
+  secret: process.env.SECRET_KEY, // Use your SECRET_KEY from Vercel ENV
+  resave: false,
+  saveUninitialized: false,
+  store: store, // <-- Use the MongoDB store
+  cookie: {
+    // secure: true, // Only set this to 'true' if you are using HTTPS (which Vercel does)
+    httpOnly: true,
+    maxAge: 1000 * 60 * 60 * 24 // 1 day
+  }
+}));
+
+// Now your login/register routes should use this session store
 
 
 app.set("view engine", "ejs");
 app.set('views', path.join(__dirname, 'views'));
-// app.use(exprees.static(path.join(__dirname + 'public')));
-app.use(exprees.static('public'));
+app.use(exprees.static(path.join(__dirname, 'public')));
+// app.use(exprees.static('public'));
 app.use(exprees.json());
 app.use(exprees.urlencoded({extended:true}));
 app.use(cookieParser());
