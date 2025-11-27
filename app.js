@@ -14,13 +14,13 @@ const { hash } = require('crypto');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 const patient = require('./models/patient');
-const port = 3000;
-
+require('dotenv').config();
 
 
 app.set("view engine", "ejs");
-// app.use(exprees.static(path.join(__dirname + 'public')));
-app.use(exprees.static('public'));
+app.set('views', path.join(__dirname, 'views'));
+app.use(exprees.static(path.join(__dirname + 'public')));
+// app.use(exprees.static('public'));
 app.use(exprees.json());
 app.use(exprees.urlencoded({extended:true}));
 app.use(cookieParser());
@@ -379,11 +379,19 @@ app.get('/history', async function(req, res){
 
 });
 
-app.listen(port, function(){
+// app.listen(port, function(){
 
-    console.log("Server Is Start Now......");
-});
+//     console.log("Server Is Start Now......");
+// });
 
+const PORT = process.env.PORT || 3000;
+if(process.env.NODE_ENV !== "production"){
+
+    app.listen(PORT, () =>{
+        console.log(`App is Running on ${PORT}`);
+    })
+}
+module.exports = app;
 
 
 
