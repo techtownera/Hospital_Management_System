@@ -380,9 +380,5 @@ app.get('/history', async function(req, res){
 
 module.exports = app; // Export the app
 
-app.listen(3000, function(){
-
-    console.log("Server Is Start Now......");
-})
 
 
