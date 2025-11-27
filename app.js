@@ -15,6 +15,7 @@ const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 const patient = require('./models/patient');
 
+module.exports = app; // Export the app
 
 
 app.set("view engine", "ejs");
