@@ -20,7 +20,7 @@ require('dotenv').config();
 app.set("view engine", "ejs");
 app.set('views', path.join(__dirname, 'views'));
 app.use(exprees.static(path.join(__dirname + 'public')));
-// app.use(exprees.static('public'));
+app.use(exprees.static('public'));
 app.use(exprees.json());
 app.use(exprees.urlencoded({extended:true}));
 app.use(cookieParser());
