@@ -14,6 +14,7 @@ const { hash } = require('crypto');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 const patient = require('./models/patient');
+const port = 3000;
 
 
 
@@ -378,7 +379,11 @@ app.get('/history', async function(req, res){
 
 });
 
-module.exports = app; // Export the app
+app.listen(port, function(){
+
+    console.log("Server Is Start Now......");
+});
+
 
 
 

@@ -1,7 +1,4 @@
-const app = require('/app');
-const port = 3000
+const app = require('./app');
 
-app.listen(port, function(){
+module.exports = app;
 
-    console.log("Server Is Start Now......");
-})
