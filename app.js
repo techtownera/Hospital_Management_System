@@ -312,6 +312,8 @@ app.post('/feedback', async function(req, res){
 
 app.get('/queries', async function(req, res){
 
+    await dbConnect();
+
     const query = await Feedback.find();
 
     res.render("queries", {query});
@@ -319,6 +321,7 @@ app.get('/queries', async function(req, res){
 
 app.get('/alldoctors', async function(req, res){
 
+    await dbConnect();
     const alldocs = await Patient.find();
 
     res.render("doctorlist", {alldocs});
@@ -326,6 +329,7 @@ app.get('/alldoctors', async function(req, res){
 
 app.get('/allpatients', async function(req, res){
 
+    await dbConnect();
     const allpatients = await Patient.find();
 
     res.render("patientlist", {allpatients});
@@ -333,6 +337,7 @@ app.get('/allpatients', async function(req, res){
 
 app.get('/allappoint', async function(req, res){
 
+    await dbConnect();
     const allappoint = await Appointment.find();
 
     res.render("apointmentdetail", {allappoint});
@@ -346,6 +351,8 @@ app.get('/adddoc', function(req, res){
 app.post('/adddoc', async function(req, res){
 
     const {fname, lname, email, phone, password, gender} = req.body;
+
+    await dbConnect();
 
     const user = await Patient.findOne({email});
 
@@ -391,7 +398,8 @@ app.get('/deletedoc', function(req, res){
 app.post('/deletedoc', async function(req, res){
 
     const {email} = req.body;
-
+     
+    await dbConnect();
     const doc = await Patient.findOneAndDelete({email});
 
     console.log(doc);
@@ -404,6 +412,7 @@ app.post('/deletedoc', async function(req, res){
 
 app.get('/history', async function(req, res){
 
+    await dbConnect();
     const allappointments = await Appointment.find();
 
     console.log(allappointments);
