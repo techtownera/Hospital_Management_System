@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 
-mongoose.connect("mongodb+srv://rohansingh6395g:Fkm8ZZHNftMiTRK8@productionsite.vxgho.mongodb.net/medicare");
+// mongoose.connect("mongodb+srv://rohansingh6395g:Fkm8ZZHNftMiTRK8@productionsite.vxgho.mongodb.net/medicare");
 
 
 const PatientSchema = mongoose.Schema({

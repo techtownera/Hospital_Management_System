@@ -14,17 +14,18 @@ const { hash } = require('crypto');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 const patient = require('./models/patient');
+const dbConnect = require('./utils/dbconnect');
 require('dotenv').config();
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
 
 // This needs to be your Production DB URI (from Vercel Environment Variables)
-const MONGODB_URI = process.env.DATABASE_URL; 
+const MONGODB_URI = process.env.DATABASE_URL;
 
 const store = new MongoDBStore({
   uri: MONGODB_URI,
   collection: 'sessions', // Name of the collection to store sessions
-});
+});   
 
 app.use(session({
   secret: process.env.SECRET_KEY, // Use your SECRET_KEY from Vercel ENV
@@ -74,6 +75,8 @@ app.get('/contact', function(req, res){
 app.post('/register', async (req, res) =>{
 
     const {fname, lname, email, phone, password, gender, role} = req.body;
+
+    await dbConnect();
 
     const user = await Patient.findOne({email});
 
@@ -136,6 +139,8 @@ app.post("/login", async function(req, res){
 
     const {email, password } = req.body;
 
+    await dbConnect();
+
     const user = await Patient.findOne({email});
 
     if(!user) res.status(500).send("Something Went Wrong........");
@@ -171,6 +176,8 @@ app.post("/login", async function(req, res){
 });
 
 app.get('/docmeet/:email', async function(req, res){
+
+    await dbConnect();
 
     const appoint = await Appointment.find();
     console.log("all appointments", appoint);
@@ -240,6 +247,8 @@ app.post('/book', async function(req, res){
 
     console.log(req.body);
 
+    await dbConnect();
+
     const new_appointment = await Appointment.create({
 
         doctor_name : docname,
@@ -283,7 +292,8 @@ app.post('/feedback', async function(req, res){
     const {name, email, phone, feedback} = req.body;
     
     // console.log(req.body);
-   
+
+   await dbConnect();
 
     const fb = await Feedback.create({
 
