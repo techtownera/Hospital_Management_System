@@ -2,7 +2,20 @@ import 'dotenv/config';
 console.log("1. Dotenv Loaded. DATABASE_URL is:", process.env.DATABASE_URL ? "SET" : "NOT SET");
 import dbConnect from './utils/dbconnect.mjs';
 import express from "express"
+import session from 'express-session';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+// ES Module equivalent of __filename
+const __filename = fileURLToPath(import.meta.url); 
+// ES Module equivalent of __dirname
+const __dirname = dirname(__filename);
+
 const app = express();
+
+app.set('views', path.join(__dirname, 'views'));
+app.set("view engine", "ejs");
+
 import path from 'path'
 import ejs from 'ejs'
 import Appointment from './models/appointment.js';
@@ -16,10 +29,7 @@ import bcrypt from 'bcrypt';
 import hash from 'crypto';
 import jwt from 'jsonwebtoken';
 import cookieParser from 'cookie-parser';
-import session from 'express-session';
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-import { SpeedInsights } from "@vercel/speed-insights/next"
+
 // const MongoDBStore = require('connect-mongodb-session')(session);
 import MongoDBStoreCreator from 'connect-mongodb-session';
 
@@ -46,14 +56,6 @@ app.use(session({
 }));
 
 // Now your login/register routes should use this session store
-
-// ES Module equivalent of __filename
-const __filename = fileURLToPath(import.meta.url); 
-// ES Module equivalent of __dirname
-const __dirname = dirname(__filename);
-
-app.set("view engine", "ejs");
-app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 // app.use(exprees.static('public'));
 app.use(express.json());
