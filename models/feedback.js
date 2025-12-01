@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 
 // mongoose.connect("mongodb+srv://rohansingh6395g:Fkm8ZZHNftMiTRK8@productionsite.vxgho.mongodb.net/medicare");
 
@@ -10,5 +10,9 @@ const FeedbackSchema = mongoose.Schema({
     feedback: String
 });
 
-module.exports = mongoose.model("feedback", FeedbackSchema);
+// module.exports = mongoose.model("feedback", FeedbackSchema);
+const Feedback = mongoose.model("Feedback", FeedbackSchema);
+
+export default Feedback;
+
 

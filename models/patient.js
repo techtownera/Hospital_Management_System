@@ -1,5 +1,4 @@
-const mongoose = require('mongoose');
-
+import mongoose from "mongoose";
 
 // mongoose.connect("mongodb+srv://rohansingh6395g:Fkm8ZZHNftMiTRK8@productionsite.vxgho.mongodb.net/medicare");
 
@@ -16,4 +15,7 @@ const PatientSchema = mongoose.Schema({
 
 })
 
-module.exports = mongoose.model("Patient", PatientSchema);
+// module.exports = mongoose.model("Patient", PatientSchema);
+const Patient = mongoose.model("Patient", PatientSchema);
+
+export default Patient;

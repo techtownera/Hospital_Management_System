@@ -1,6 +1,8 @@
 // utils/dbConnect.js or similar
 import mongoose from 'mongoose';
 
+console.log("2. Inside dbConnect.mjs. DATABASE_URL is:", process.env.DATABASE_URL ? "SET" : "NOT SET");
+
 const MONGODB_URI = process.env.DATABASE_URL;
 
 if (!MONGODB_URI) {
@@ -12,22 +14,6 @@ let cached = global.mongoose;
 if (!cached) {
   cached = global.mongoose = { conn: null, promise: null };
 }
-
-// async function dbConnect() {
-//   if (cached.conn) {
-//     return cached.conn;
-//   }
-
-//   if (!cached.promise) {
-//     cached.promise = mongoose.connect(MONGODB_URI).then((mongoose) => {
-//       return mongoose;
-//     });
-//   }
-//   cached.conn = await cached.promise;
-//   return cached.conn;
-// }
-
-// export default dbConnect;
 
 // ... (rest of your code remains the same)
 

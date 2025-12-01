@@ -1,23 +1,28 @@
-const exprees = require('express');
-const app = exprees();
-const path = require('path');
-const ejs = require('ejs');
-const Appointment = require("./models/appointment");
-const Patient = require('./models/patient');
-const Feedback = require('./models/feedback');
-const fs = require('fs');
-const PDFDocument = require('pdfkit');
-const bodyParser = require('body-parser');
-const multer = require('multer');
-const bcrypt = require('bcrypt');
-const { hash } = require('crypto');
-const jwt = require('jsonwebtoken');
-const cookieParser = require('cookie-parser');
-const patient = require('./models/patient');
-const dbConnect = require('./utils/dbconnect');
-require('dotenv').config();
-const session = require('express-session');
-const MongoDBStore = require('connect-mongodb-session')(session);
+import 'dotenv/config';
+console.log("1. Dotenv Loaded. DATABASE_URL is:", process.env.DATABASE_URL ? "SET" : "NOT SET");
+import dbConnect from './utils/dbconnect.mjs';
+import express from "express"
+const app = express();
+import path from 'path'
+import ejs from 'ejs'
+import Appointment from './models/appointment.js';
+import Patient from './models/patient.js';
+import Feedback from './models/Feedback.js';
+import fs from 'fs';
+import PDFDocument from 'pdfkit';
+import bodyParser from 'body-parser';
+import multer from 'multer';
+import bcrypt from 'bcrypt';
+import hash from 'crypto';
+import jwt from 'jsonwebtoken';
+import cookieParser from 'cookie-parser';
+import session from 'express-session';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+// const MongoDBStore = require('connect-mongodb-session')(session);
+import MongoDBStoreCreator from 'connect-mongodb-session';
+
+const MongoDBStore = MongoDBStoreCreator(session);
 
 // This needs to be your Production DB URI (from Vercel Environment Variables)
 const MONGODB_URI = process.env.DATABASE_URL;
@@ -41,13 +46,17 @@ app.use(session({
 
 // Now your login/register routes should use this session store
 
+// ES Module equivalent of __filename
+const __filename = fileURLToPath(import.meta.url); 
+// ES Module equivalent of __dirname
+const __dirname = dirname(__filename);
 
 app.set("view engine", "ejs");
 app.set('views', path.join(__dirname, 'views'));
-app.use(exprees.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 // app.use(exprees.static('public'));
-app.use(exprees.json());
-app.use(exprees.urlencoded({extended:true}));
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 
 
@@ -434,7 +443,7 @@ if(process.env.NODE_ENV !== "production"){
         console.log(`App is Running on ${PORT}`);
     })
 }
-module.exports = app;
+export default app;
 
 
 

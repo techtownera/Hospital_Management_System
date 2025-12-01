@@ -1,5 +1,4 @@
-const mongoose = require('mongoose');
-
+import mongoose from "mongoose";
 // mongoose.connect("mongodb+srv://rohansingh6395g:Fkm8ZZHNftMiTRK8@productionsite.vxgho.mongodb.net/medicare");
 
 const AppointmentSchema = mongoose.Schema({
@@ -13,4 +12,7 @@ const AppointmentSchema = mongoose.Schema({
 });
 
 
-module.exports = mongoose.model("Appointment", AppointmentSchema);
+// module.exports = mongoose.model("Appointment", AppointmentSchema);
+const Appointment = mongoose.model("Appointment", AppointmentSchema);
+
+export default Appointment;
