@@ -19,6 +19,7 @@ import cookieParser from 'cookie-parser';
 import session from 'express-session';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 // const MongoDBStore = require('connect-mongodb-session')(session);
 import MongoDBStoreCreator from 'connect-mongodb-session';
 
