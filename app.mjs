@@ -13,8 +13,9 @@ const __dirname = dirname(__filename);
 
 const app = express();
 
-app.set('views', path.join(__dirname, 'views'));
 app.set("view engine", "ejs");
+app.set('views', path.join(__dirname, 'views'));
+
 
 import path from 'path'
 import ejs from 'ejs'
